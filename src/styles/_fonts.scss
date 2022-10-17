@@ -1,0 +1,114 @@
+@use "sass:map";
+
+@font-face {
+  font-family: Lato;
+  src: url(./../assets/fonts/Lato/Lato-Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+};
+@font-face {
+  font-family: Lato;
+  src: url(./../assets/fonts/Lato/Lato-SemiBold.ttf);
+  font-style: normal;
+  font-weight: 600;
+};
+@font-face {
+  font-family: Lato;
+  src: url(./../assets/fonts/Lato/Lato-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+};
+@font-face {
+  font-family: Lato;
+  src: url(./../assets/fonts/Lato/Lato-Black.ttf);
+  font-style: normal;
+  font-weight: 900;
+};
+
+
+@mixin text_size($fsize, $lheight) {
+  font-family: Lato;
+  font-size: $fsize;
+  line-height: $lheight;
+};
+
+@mixin text_weight($fweight) {
+  font-weight: $fweight;
+};
+
+
+@mixin text($fsize, $lheight, $fweight) {
+  @include text_size($fsize, $lheight);
+  @include text_weight($fweight);
+};
+
+.h1 {
+  @include text(28px, 36px, 800);
+};
+.h2 {
+  @include text(24px, 32px, 800);
+};
+.h3 {
+  @include text(20px, 28px, 600);
+};
+.h4 {
+  @include text(18px, 36px, 700);
+  text-transform: uppercase;
+};
+.h5 {
+  @include text(16px, 24px, 800);
+};
+
+.copytext {
+  @include text_size(16px, 24px);
+  &--standard {
+    @include text_weight(400);
+    &--uppercase {
+      text-transform: uppercase;
+    }
+    &--link {
+      text-decoration-line: underline;
+    }
+  }
+  &--semi-bold {
+    @include text_weight(600);
+  }
+  &--bold {
+    @include text_weight(700);
+  }
+};
+
+.caption {
+  @include text_size(14px, 24px);
+  &--standard {
+    @include text_weight(400);
+    &--link {
+      text-decoration-line: underline;
+    }
+  }
+  &--bold {
+    @include text_weight(700);
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  }
+};
+
+.btn--label {
+  @include text(14px, 24px, 900);
+};
+
+.caption-small {
+  @include text_size(12px, 20px);
+  &--standard {
+    @include text_weight(400);
+  }
+  &--bold {
+    @include text_weight(700);
+  }
+};
+
+
+
+
+
