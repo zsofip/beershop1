@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-icon-button',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconButtonComponent implements OnInit {
 
-  constructor() { }
+  @Input() iconName?: string;
+
+  constructor() {}
 
   ngOnInit(): void {
   }

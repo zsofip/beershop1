@@ -1,0 +1,46 @@
+<div class="tile" id="tile">
+  <div class="tile-info" id="tile-info">
+    <div class="tile-visual" id="tile-visual">
+      <div class="badges-icons" id="badges-icons">
+        <div class="badges" id="badges">
+          <app-badge *ngIf="status" [status]="status"></app-badge>
+          <app-badge *ngIf="productOfWeek" [productOfWeek]="productOfWeek"></app-badge>
+        </div>
+        <div class="icons" id="icons">
+          <app-icon-button id="icon-compare" [iconName]="compare"></app-icon-button>
+          <app-icon-button id="icon-heart" [iconName]="heart"></app-icon-button>
+        </div>
+      </div>
+      <div class="image-frame" id="image-frame">
+        <!-- <div class="image" id="image" style="background-size: contain; background-image: url({{currentBeer?.image_url}}); background-repeat: no-repeat;"></div> -->
+        <div class="image" id="image" style="background-image: url({{currentBeer?.image_url}});"></div>
+      </div>
+    </div>
+    <div class="tile-text" id="tile-text">
+      <p class="caption" id="add">{{ currentBeer?.name }}</p>
+      <h5 class="h5" id="desc">{{ currentBeer?.name }}</h5>
+      <p class="caption" id="add">{{ currentBeer?.tagline }}</p>
+    </div>
+  </div>
+  <div class="tile-shopping" id="tile-shopping">
+    <div class="shopping-info" id="shopping-info">
+      <div class="price-info" id="price-info">
+        <div class="prices" id="prices">
+          <p class="h2" id="price">€{{ currentBeer?.ph }}
+            <span *ngIf="status === 'sale'" class="caption" id="full-price">€{{ currentBeer?.ph }}</span>
+          </p>
+          <div *ngIf="status === 'sale'" class="off-price" id="off-price">
+            <p class="caption-small" id="off-price-text">50% OFF</p>
+          </div>
+        </div>
+      </div>
+      <p class="caption" id="content-info">Content
+        <span class="liter-info" id="liter-info">0.44 Liter</span>
+      </p>
+    </div>
+    <div class="shopping-action-container" id="shopping-action-container">
+      <input type="number" class="quantity" id="quantity">
+      <app-primary-button></app-primary-button>
+    </div>
+  </div>
+</div>

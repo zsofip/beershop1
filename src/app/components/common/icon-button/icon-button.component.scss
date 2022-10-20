@@ -1,0 +1,46 @@
+@use "colors";
+@use "sass: map";
+
+.icon-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 4px;
+
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 18.03px;
+  bottom: 257px;
+
+  border-radius: 4px;
+
+  color: map.get($map: colors.$colors, $key: "greyscale", "black");
+
+  &:hover {
+    bottom: 192px;
+    color: map.get($map: colors.$colors, $key: "primary", "dark");
+  }
+
+  &:focus {
+    box-sizing: border-box;
+
+    bottom: 127px;
+    color: map.get($map: colors.$colors, $key: "primary", "dark");
+
+    /* Accent/Orange */
+    border: 2px solid map.get($map: colors.$colors, $key: "accent", "orange");
+  }
+
+  &:disabled {
+    bottom: 62px;
+    color: map.get($map: colors.$colors, $key: "greyscale", "dark");
+  }
+}
+
+.icon-img {
+  width: 24px;
+  height: 24px;
+}

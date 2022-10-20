@@ -1,0 +1,64 @@
+@use "colors";
+@use "sass: map";
+
+#badge {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 1px 11px;
+  gap: 10px;
+
+  position: absolute;
+
+  border-radius: 4px;
+
+  &--.sale {
+    @extend #badge;
+
+    width: 45px;
+    height: 25px;
+    left: 20px;
+    top: 20px;
+
+    /* Accent/Violet */
+    background-color: map.get($map: colors.$colors, $key: "accent", "violet");
+  }
+  &--.sold-out {
+    @extend #badge;
+
+    width: 66px;
+    height: 25px;
+    left: 20px;
+    top: 65px;
+
+    /* Accent/Orange */
+    background-color: map.get($map: colors.$colors, $key: "accent", "orange");
+  }
+  &--.new {
+    @extend #badge;
+
+    width: 47px;
+    height: 25px;
+    left: 20px;
+    top: 110px;
+
+    /* Primary/Turquoise */
+    background-color: map.get($map: colors.$colors, $key: "primary", "base");
+  }
+  &--.product-of-week {
+    @extend #badge;
+
+    box-sizing: border-box;
+
+    width: 131px;
+    height: 25px;
+    left: 20px;
+    top: 155px;
+
+   /* Greyscale/White */
+    background-color: map.get($map: colors.$colors, $key: "greyscale", "white");
+
+    /* Greyscale/Black */
+    border: 1px solid map.get($map: colors.$colors, $key: "greyscale", "black");
+  }
+}

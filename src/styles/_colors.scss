@@ -1,23 +1,23 @@
 @use "sass:map";
 
 $colors: (
-  primary: (
+  "primary": (
     "base": rgb(90, 176, 187),
     "dark": rgb(20, 147, 164),
     "light": rgb(206, 231, 235),
   ),
-  accent: (
+  "accent": (
     "violet": rgb(102, 49, 141),
     "orange": rgb(251, 130, 0),
   ),
-  functional: (
-    success: (
+  "functional": (
+    "success": (
       "dark": rgb(76, 175, 80),
       "light": rgb(235, 244, 230),
     ),
     "warning": rgb(190, 0, 40),
   ),
-  greyscale: (
+  "greyscale": (
     "black": rgb(0, 0, 0),
     "dark": rgb(123, 126, 130),
     "base": rgb(207, 207, 207),

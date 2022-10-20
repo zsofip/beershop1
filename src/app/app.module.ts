@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { PrimaryButtonComponent } from './components/common/primary-button/prima
 import { SecondaryButtonComponent } from './components/common/secondary-button/secondary-button.component';
 import { IconButtonComponent } from './components/common/icon-button/icon-button.component';
 import { TextButtonComponent } from './components/common/text-button/text-button.component';
+import { ProductTileComponent } from './components/common/product-tile/product-tile.component';
+import { BadgeComponent } from './components/common/badge/badge.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +43,14 @@ import { TextButtonComponent } from './components/common/text-button/text-button
     PrimaryButtonComponent,
     SecondaryButtonComponent,
     IconButtonComponent,
-    TextButtonComponent
+    TextButtonComponent,
+    ProductTileComponent,
+    BadgeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

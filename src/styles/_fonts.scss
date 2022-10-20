@@ -46,7 +46,7 @@
   @include text(28px, 36px, 800);
 };
 .h2 {
-  @include text(24px, 32px, 800);
+  @include text(24px, 32px, 900);
 };
 .h3 {
   @include text(20px, 28px, 600);
@@ -56,24 +56,29 @@
   text-transform: uppercase;
 };
 .h5 {
-  @include text(16px, 24px, 800);
+  @include text(16px, 28px, 900);
 };
 
 .copytext {
   @include text_size(16px, 24px);
   &--standard {
+    @extend .copytext;
     @include text_weight(400);
     &--uppercase {
+      @extend .copytext--standard;
       text-transform: uppercase;
     }
     &--link {
+      @extend .copytext--standard;
       text-decoration-line: underline;
     }
   }
   &--semi-bold {
+    @extend .copytext;
     @include text_weight(600);
   }
   &--bold {
+    @extend .copytext;
     @include text_weight(700);
   }
 };
@@ -81,14 +86,18 @@
 .caption {
   @include text_size(14px, 24px);
   &--standard {
+    @extend .caption;
     @include text_weight(400);
     &--link {
+      @extend .caption--standard;
       text-decoration-line: underline;
     }
   }
   &--bold {
+    @extend .caption;
     @include text_weight(700);
     &--uppercase {
+      @extend .caption--bold;
       text-transform: uppercase;
     }
   }
@@ -101,9 +110,11 @@
 .caption-small {
   @include text_size(12px, 20px);
   &--standard {
+    @extend .caption-small;
     @include text_weight(400);
   }
   &--bold {
+    @extend .caption-small;
     @include text_weight(700);
   }
 };
