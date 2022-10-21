@@ -10,9 +10,11 @@ export class ProductTileComponent implements OnInit {
 
   @Input() currentBeer?: Beer;
   @Input() productOfWeek: boolean = true;
-  @Input() status: string = "sale";
+  // @Input() status: string;
+  status: string = "sale";
   compare: string = "compare";
   heart: string = "heart";
+  btnText: string = "Add to cart";
 
   constructor() {
   }

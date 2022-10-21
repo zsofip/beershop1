@@ -13,24 +13,24 @@ export class BadgeComponent implements OnInit {
   badgeClass?: string;
 
   constructor() {
-    if(this.status && this.status == "sale") {
+  }
+
+  ngOnInit(): void {
+    if(this.status == "sale") {
       this.badgeText = "Sale",
       this.badgeClass = "sale"
-    } else if(this.status && this.status == "soldOut") {
+    } else if(this.status == "soldOut") {
       this.badgeText = "Sold out",
       this.badgeClass = "sold-out"
-    } else if(this.status && this.status == "new") {
+    } else if(this.status == "new") {
       this.badgeText = "New",
       this.badgeClass = "new"
     }
 
-    if(this.productOfWeek && this.productOfWeek == true) {
+    if(this.productOfWeek) {
       this.badgeText = "Product of the week",
       this.badgeClass = "product-of-week"
     }
-  }
-
-  ngOnInit(): void {
   }
 
 }

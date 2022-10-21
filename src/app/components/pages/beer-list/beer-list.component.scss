@@ -1,0 +1,35 @@
+.beer-list-container {
+  // margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    // "header-container header-container header-container header-container"
+    // "title-nav title-nav title-nav title-nav"
+    "sidebar-container list-container list-container list-container"
+    "sidebar-container list-container list-container list-container"
+    "sidebar-container list-container list-container list-container"
+    "footer-container footer-container footer-container footer-container";
+}
+
+.header-container { grid-area: app-header;}
+// .title-nav { grid-area: title-nav; display: flex;}
+.sidebar-container { grid-area: sidebar-container;}
+.list-container { grid-area: list-container; display: flex;}
+.footer-container { grid-area: footer-container; display: flex;}
+
+// .title { grid-area: title; }
+
+// .footer { grid-area: footer; }
+
+// app-list { grid-area: app-list; }
+
+// app-sidebar { grid-area: app-sidenav; }
+
+.header-container {
+  position: absolute;
+  width: 1445px;
+  height: 198px;
+}

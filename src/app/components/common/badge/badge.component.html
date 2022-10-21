@@ -1,5 +1,8 @@
-<div [ngClass]="badgeClass" id="badge">
-  <p class="badge-text" id="badge-text">
+<div
+[ngClass]="{'sale': status === 'sale', 'sold-out' : status === 'soldOut', 'new' : status === 'new', 'product-of-week' : productOfWeek}"
+id="badge">
+  <p class="caption-small--bold" [ngClass]="{'sale-sold-new-text': status, 'product-of-week-text' : productOfWeek}"
+  id="badge-text">
     {{ badgeText }}
   </p>
 </div>

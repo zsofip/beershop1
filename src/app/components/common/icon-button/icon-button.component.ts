@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -13,5 +14,4 @@ export class IconButtonComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

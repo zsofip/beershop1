@@ -1,64 +1,82 @@
-@use "colors";
-@use "sass: map";
+@use "./../../../../styles/colors";
+@use "./../../../../styles/fonts";
+@use "sass:map";
 
-#badge {
+.badge {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 1px 11px;
-  gap: 10px;
-
-  position: absolute;
-
+  padding: 2px 5px;
   border-radius: 4px;
+  box-sizing: border-box;
+  height: 25px;
+  width:max-content;
+  border: 1px solid;
+}
 
-  &--.sale {
-    @extend #badge;
+.sale {
+  @extend .badge;
 
-    width: 45px;
-    height: 25px;
-    left: 20px;
-    top: 20px;
+  /* Accent/Violet */
+  background-color: map.get(colors.$colors, "accent", "violet");
+  border-color: map.get(colors.$colors, "accent", "violet");
+}
+.sold-out {
+  @extend .badge;
 
-    /* Accent/Violet */
-    background-color: map.get($map: colors.$colors, $key: "accent", "violet");
-  }
-  &--.sold-out {
-    @extend #badge;
+  // box-sizing: border-box;
 
-    width: 66px;
-    height: 25px;
-    left: 20px;
-    top: 65px;
+  width:max-content;
 
-    /* Accent/Orange */
-    background-color: map.get($map: colors.$colors, $key: "accent", "orange");
-  }
-  &--.new {
-    @extend #badge;
+  /* Accent/Orange */
+  background-color: map.get(colors.$colors, "accent", "orange");
 
-    width: 47px;
-    height: 25px;
-    left: 20px;
-    top: 110px;
+  border-color: map.get(colors.$colors, "accent", "orange");
+}
+.new {
+  @extend .badge;
 
-    /* Primary/Turquoise */
-    background-color: map.get($map: colors.$colors, $key: "primary", "base");
-  }
-  &--.product-of-week {
-    @extend #badge;
+  /* Primary/Turquoise */
+  background-color: map.get(colors.$colors, "primary", "base");
+  border-color: map.get(colors.$colors, "primary", "base");
+}
+.product-of-week {
+  @extend .badge;
 
-    box-sizing: border-box;
+  /* Greyscale/White */
+  background-color: map.get(colors.$colors, "greyscale", "white");
 
-    width: 131px;
-    height: 25px;
-    left: 20px;
-    top: 155px;
+  /* Greyscale/Black */
+  border-color: map.get(colors.$colors, "greyscale", "black");
+}
 
-   /* Greyscale/White */
-    background-color: map.get($map: colors.$colors, $key: "greyscale", "white");
+.badgeText {
+  /* Additional */
 
-    /* Greyscale/Black */
-    border: 1px solid map.get($map: colors.$colors, $key: "greyscale", "black");
-  }
+  // width: 44px;
+  // height: 20px;
+
+  /* Caption/Caption small bold */
+
+
+  // font-family: "Lato";
+  // font-style: normal;
+  // font-weight: 700;
+  // font-size: 12px;
+  // line-height: 20px;
+  /* identical to box height, or 167% */
+
+  display: flex;
+  align-items: center;
+  margin: 0
+}
+
+.sale-sold-new-text {
+  @extend .badgeText;
+  color: map.get(colors.$colors,"greyscale", "white");
+}
+
+.product-of-week-text {
+  @extend .badgeText;
+  color: map.get(colors.$colors,"greyscale", "black");
 }

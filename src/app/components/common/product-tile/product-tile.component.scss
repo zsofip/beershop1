@@ -1,5 +1,6 @@
-@use "fonts";
-@use "colors";
+@use "./../../../../styles/fonts";
+@use "./../../../../styles/colors";
+@use "sass:map";
 
 .tile {
   /* Product Tile */
@@ -13,148 +14,199 @@
   padding: 16px;
   gap: 16px;
 
-  position: absolute;
-  width: 302px;
-  height: 467px;
-  left: 67px;
-  top: 211px;
+  // position: absolute;
+  min-width: 302px;
+  min-height: 467px;
 
-  background: #FFFFFF;
+  // background: map.get(colors.$colors, "greyscale", "white");
 
   /* Greyscale/Light Grey */
-  border: 1px solid #E9E9E9;
-  box-shadow: 0px 2px 4px rgba(5, 7, 32, 0.08);
+  border: 1px solid map.get(colors.$colors, "greyscale", "white");
+  box-shadow: 0px 2px 4px map.get(colors.$colors, "greyscale", "light");
   border-radius: 4px;
 }
 
 .tile-info {
   /* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
 
-width: 270px;
-height: 306px;
+  width: 270px;
+  height: 306px;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+  /* Inside auto layout */
+  // flex: none;
+  // order: 0;
+  // align-self: stretch;
+  // flex-grow: 0;
 }
 
 .tile-visual {
   /* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-padding: 0px;
-gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0px;
+  gap: 12px;
 
-width: 270px;
-height: 212px;
-left: 0px;
-top: 0px;
+  width: 270px;
+  height: 212px;
 }
 
 .badges-icons {
+  width: 270px;
   height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 6px;
 
   /* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+  // flex: none;
+  // order: 0;
+  // align-self: stretch;
+  // flex-grow: 0;
 }
 
 .badges {
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 6px;
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 6px;
 
-// position: absolute;
-width: 183.68px;
-height: 25px;
-left: 0px;
-top: 7px;
+  width: max-content;
+  height: 40px;
 }
 
 .icons {
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: flex-end;
-align-items: flex-start;
-padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0px;
+  gap: 6px;
 
-position: absolute;
-width: 77.18px;
-height: 40px;
-left: 192.82px;
-top: 0px;
-
-}
-
-// app-badge {
-
-// }
-
-app-icon-button {
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 8px;
-gap: 4px;
-
-width: 40px;
-height: 40px;
-
-border-radius: 4px;
+  width: max-content;
+  height: 40px;
 }
 
 #icon-compare {
-transform: rotate(180deg);
-  /* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 #icon-heart {
-  /* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
 
 .image-frame {
-  /* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 10px;
-
-position: absolute;
-width: 270px;
-height: 160px;
-left: 0px;
-top: 52px;
+  width: 270px;
+  height: 160px;
+  background-color: map.get(colors.$colors, "greyscale", "light");
 }
 
 .image {
-background-size: contain;
-background-repeat: no-repeat;
-position: absolute;
-left: 17.21%;
-right: 17.21%;
-top: 24.53%;
-bottom: 0%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 270px;
+  min-height: 160px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1);
+    background-size: auto;
+  }
+}
+
+.tile-text {
+  width: 270px;
+  height: 78px;
+}
+
+p {
+  margin: 0;
+}
+
+h5 {
+  margin: 0;
+}
+
+.tile-shopping {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 270px;
+  height: 115px;
+}
+
+.shopping-info {
+  width: 270px;
+  height: 59px;
+}
+
+.prices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.price {
+  position: relative;
+}
+
+span.old-price {
+  position: absolute;
+  font-weight: 200;
+  text-decoration: line-through;
+}
+
+.off-price {
+  width: 70px;
+  height: 24px;
+  text-align: center;
+  background-color: map.get(colors.$colors, "functional", "success", "light");
+}
+
+.liter-info {
+  color: map.get(colors.$colors, "greyscale", "dark");
+}
+
+.shopping-action-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 270px;
+  height: 40px;
+}
+
+.quantity {
+  width: 40px;
+  height: 40px;
+  border: 1px solid map.get(colors.$colors, "greyscale", "dark");
+  border-radius: 4px;
+  padding: 0;
+}
+
+::placeholder {
+  text-align: center;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }

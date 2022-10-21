@@ -1,3 +1,5 @@
-<div *ngFor="let beer of List$ | async">
-  <app-product-tile [currentBeer] = "beer"></app-product-tile>
+<div class="tile-container">
+  <div *ngFor="let beer of List$ | async">
+    <app-product-tile [currentBeer] = "beer"></app-product-tile>
+  </div>
 </div>
