@@ -1,1 +1,47 @@
-<div class="container"></div>
+<div class="container-fluid">
+  <div class="row d-flex justify-content-between mt-2 mx-5">
+    <div class="col">
+      <p>
+        <img src="./../../../../../assets/icons/16/communications.svg" alt="communication">
+        Contact
+      </p>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <p>
+        <img src="./../../../../../assets/icons/16/maps.svg" alt="globe">
+        EN
+        <img src="./../../../../../assets/icons/16/arrow-down.svg" alt="arrow-down">
+      </p>
+    </div>
+  </div>
+  <div class="row mx-5 flex-nowrap">
+    <div class="col-2">
+      <a routerLink="/">
+        <img src="./../../../../../assets/logo/logo.svg" alt="logo">
+      </a>
+    </div>
+    <div class="col-5 mx-5">
+      <app-searchbar></app-searchbar>
+    </div>
+    <div class="col-3 d-flex mx-5 menu-icon-container">
+      <app-menu-icon [iconName]="myAccount"></app-menu-icon>
+      <app-menu-icon [iconName]="whishlist"></app-menu-icon>
+      <app-menu-icon [iconName]="compare"></app-menu-icon>
+      <app-menu-icon [iconName]="cart"></app-menu-icon>
+    </div>
+  </div>
+  <div class="row d-flex flex-nowrap">
+    <div class="col-5 d-flex justify-content-end">
+      <div class="nav-link caption--bold--uppercase mx-3">
+        <a routerLink="/" routerLinkActive="active">all beers</a>
+      </div>
+      <div class="nav-link caption--bold--uppercase mx-3">
+        <a routerLink="/">packages</a>
+      </div>
+      <div class="nav-link caption--bold--uppercase mx-3">
+        <a routerLink="/">beer gifts</a>
+      </div>
+    </div>
+  </div>
+  <hr class="mt-0">
+</div>

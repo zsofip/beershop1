@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductTileComponent implements OnInit {
 
-  @Input() currentBeer?: Beer;
+  @Input() currentBeer?: any;
   @Input() productOfWeek: boolean = true;
   // @Input() status: string;
   status: string = "sale";

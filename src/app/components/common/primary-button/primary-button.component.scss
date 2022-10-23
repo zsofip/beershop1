@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 24px;
+  padding: 8px 12px;
   gap: 8px;
 
   width: 151px;
@@ -15,9 +15,25 @@
 
   background: map.get(colors.$colors, "primary", "base");
   border-radius: 4px;
-  border: 3px solid;
-  border-color: map.get(colors.$colors, "primary", "base");
+  border: none;
+  // border-color: map.get(colors.$colors, "primary", "base");
 
   color: map.get(colors.$colors, "greyscale", "white");
+
+  &:hover {
+    background: map.get(colors.$colors,"primary", "dark");
+  }
+  &:focus {
+    border: 2px solid map.get(colors.$colors,"accent", "orange");
+    background: map.get(colors.$colors,"primary", "dark");
+  }
+  &:disabled {
+    color: map.get(colors.$colors,"greyscale", "dark");
+    background: map.get(colors.$colors,"greyscale", "light");
+  }
+}
+
+p {
+  margin: 0;
 }
 

@@ -1,7 +1,35 @@
-<app-header></app-header>
-
-<app-shopping-cart-table></app-shopping-cart-table>
-
-<app-order-summary></app-order-summary>
-
-<app-showcase></app-showcase>
+<div class="shopping-container">
+  <div class="row">
+    <div class="col-12">
+      <div class="header-container">
+        <app-header></app-header>
+        <div class="page-title m-5">
+          <h1 class="h1">Shopping cart</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-9">
+      <div class="row">
+        <div class="shopping-table-container">
+          <app-shopping-cart-table></app-shopping-cart-table>
+        </div>
+      </div>
+      <div class="row">
+          <app-showcase></app-showcase>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="order-summary-container">
+        <app-order-summary></app-order-summary>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="recently-viewed-container"></div>
+  </div>
+  <div class="row">
+    <div class="footer-container"></div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+@use './../../../../../../styles/colors';
+@use './../../../../../../styles/fonts';
+@use 'sass:map';
+
+
+.form-check {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.form-check-input {
+  width: 24px;
+  height: 24px;
+  border: 1px solid map.get(colors.$colors,"greyscale", "dark");
+  border-radius: 1px;
+  &:hover {
+    border-color: map.get(colors.$colors,"greyscale", "black");
+  }
+  &:focus-within {
+    border-color: map.get(colors.$colors,"primary", "base");
+  }
+  &:checked{
+    border-color: map.get(colors.$colors,"greyscale", "black");
+    background-color: map.get(colors.$colors,"greyscale", "base");
+  }
+
+}
+

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpService } from './../../../services/http.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { Beer } from 'src/app/models/beer';
 
 @Component({
   selector: 'app-beer-detail',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeerDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() currentBeer$: Observable<Beer> = this.httpService.getOne(1);
+
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
   }

@@ -1,7 +1,45 @@
-<app-header></app-header>
+<div class="beer-detail-container">
+  <div class="row">
+    <div class="col-12">
+      <div class="header-container">
+        <app-header></app-header>
+        <div class="row m-4">
+          <div class="col ms-4">
+            <nav style="--bs-breadcrumb-divider: url(../../../../../assets/icons/16/arrow-right.svg);" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item caption--standard"><a href="#">Home</a></li>
+                <li class="breadcrumb-item caption--standard" aria-current="page">All Beers</li>
+                <li class="breadcrumb-item active caption--bold" aria-current="page">{{ currentBeer$ |async }}</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-9">
+      <div class="detail-container">
+        <app-detail></app-detail>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="add-to-cart-container">
+        <app-add-to-cart></app-add-to-cart>
+      </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-9">
+      <app-showcase></app-showcase>
+    </div>
+  </div>
+  <div class="row">
+    <div class="footer-container"></div>
+  </div>
+</div>
 
-<app-detail></app-detail>
 
-<app-add-to-cart></app-add-to-cart>
 
-<app-showcase></app-showcase>
+
+

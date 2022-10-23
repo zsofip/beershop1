@@ -1,0 +1,43 @@
+<div *ngIf="iconName === 'myAccount'" class="menu-icon">
+  <a routerLink="" id="menu-icon-link">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 20V19C5 15.134 8.13401 12 12 12V12C15.866 12 19 15.134 19 19V20" stroke="currentColor"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path
+        d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z"
+        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <p class="caption-small">My Account</p>
+  </a>
+</div>
+<div *ngIf="iconName === 'whishlist'" class="menu-icon">
+  <a href="" id="menu-icon-link">
+    <svg id="heart" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M22 8.86222C22 10.4087 21.4062 11.8941 20.3458 12.9929C17.9049 15.523 15.5374 18.1613 13.0053 20.5997C12.4249 21.1505 11.5042 21.1304 10.9488 20.5547L3.65376 12.9929C1.44875 10.7072 1.44875 7.01723 3.65376 4.73157C5.88044 2.42345 9.50794 2.42345 11.7346 4.73157L11.9998 5.00642L12.2648 4.73173C13.3324 3.6245 14.7864 3 16.3053 3C17.8242 3 19.2781 3.62444 20.3458 4.73157C21.4063 5.83045 22 7.31577 22 8.86222Z"
+        stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+    </svg>
+    <p class="caption-small">Whishlist({{ numberOfHearts }})</p>
+  </a>
+</div>
+<div *ngIf="iconName === 'compare'" class="menu-icon">
+  <a routerLink="" id="menu-icon-link">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6.53033 7.46978L6 6.93945L4.93934 8.00011L5.46967 8.53044L8.18934 11.2501H1L1 12.7501H8.18934L5.46967 15.4698L4.93934 16.0001L6 17.0608L6.53033 16.5304L10.5303 12.5304L11.0607 12.0001L10.5303 11.4698L6.53033 7.46978ZM15.8107 11.2501L23 11.2501L23 12.7501L15.8107 12.7501L18.5303 15.4698L19.0607 16.0001L18 17.0608L17.4697 16.5304L13.4697 12.5304L12.9393 12.0001L13.4697 11.4698L17.4697 7.46978L18 6.93945L19.0607 8.00011L18.5303 8.53044L15.8107 11.2501Z"
+        fill="currentColor" />
+    </svg>
+    <p class="caption-small">Compare({{ numberOfCompared }})</p>
+  </a>
+</div>
+<div *ngIf="iconName === 'cart'" class="menu-icon">
+  <a  routerLink="/shopping-cart"  id="menu-icon-link">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.5 21C19.3284 21 20 20.3284 20 19.5C20 18.6716 19.3284 18 18.5 18C17.6716 18 17 18.6716 17 19.5C17 20.3284 17.6716 21 18.5 21Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10.5 21C11.3284 21 12 20.3284 12 19.5C12 18.6716 11.3284 18 10.5 18C9.67157 18 9 18.6716 9 19.5C9 20.3284 9.67157 21 10.5 21Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5.7 4.69231H21L19.2 14H7.5L5.7 4.69231ZM5.7 4.69231C5.55 4.12821 4.8 3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M19 14H7.11429H5.4967C3.86534 14 3 14.7812 3 16C3 17.2188 3.86534 18 5.4967 18H18.5429" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    <p class="caption-small">Cart({{ numberInCart }})</p>
+  </a>
+</div>

@@ -1,0 +1,8 @@
+@use "./../../../../styles/colors";
+@use "./../../../../styles/fonts";
+@use "sass:map";
+
+li a {
+  text-decoration: none;
+  color: map.get(colors.$colors, "greyscale", "black");
+}

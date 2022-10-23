@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  myAccount: string = "myAccount";
+  whishlist: string = "whishlist";
+  compare: string = "compare";
+  cart: string = "cart";
+
   constructor() { }
 
   ngOnInit(): void {

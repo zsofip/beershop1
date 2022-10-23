@@ -1,17 +1,37 @@
 <div class="beer-list-container">
-  <div class="header-container">
-    <app-header></app-header>
-
-    <!-- <div class="title-nav"></div> -->
+  <div class="row">
+    <div class="col-12">
+      <div class="header-container">
+        <app-header></app-header>
+        <div class="row m-4">
+          <div class="col ms-4">
+            <nav style="--bs-breadcrumb-divider: url(../../../../../assets/icons/16/arrow-right.svg);" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item caption--standard"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active caption--bold" aria-current="page">All Beers</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="page-title m-5">
+          <h1 class="h1">All Beers</h1>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="sidebar-container">
-    <app-sidebar></app-sidebar>
+  <div class="row">
+    <div class="col-3">
+      <div class="sidebar-container">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="list-container">
+        <app-list ></app-list>
+      </div>
+    </div>
   </div>
-
-  <div class="list-container">
-    <app-list></app-list>
+  <div class="row">
+    <div class="footer-container"></div>
   </div>
-
-  <div class="footer-container"></div>
 </div>

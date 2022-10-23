@@ -15,14 +15,17 @@ import { AddToCartComponent } from './components/pages/beer-detail/add-to-cart/a
 import { ShoppingCartTableComponent } from './components/pages/shopping-cart/shopping-cart-table/shopping-cart-table.component';
 import { ShowcaseComponent } from './components/pages/shared/showcase/showcase.component';
 import { OrderSummaryComponent } from './components/pages/shopping-cart/order-summary/order-summary.component';
-import { InputComponent } from './components/common/input/input.component';
-import { CheckboxComponent } from './components/common/checkbox/checkbox.component';
+import { CheckboxComponent } from './components/pages/beer-list/sidebar/checkbox/checkbox.component';
 import { PrimaryButtonComponent } from './components/common/primary-button/primary-button.component';
 import { SecondaryButtonComponent } from './components/common/secondary-button/secondary-button.component';
 import { IconButtonComponent } from './components/common/icon-button/icon-button.component';
 import { TextButtonComponent } from './components/common/text-button/text-button.component';
 import { ProductTileComponent } from './components/common/product-tile/product-tile.component';
-import { BadgeComponent } from './components/common/badge/badge.component';
+import { BadgeComponent } from './components/common/product-tile/badge/badge.component';
+import { SearchbarComponent } from './components/pages/shared/header/searchbar/searchbar.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuIconComponent } from './components/pages/shared/header/menu-icon/menu-icon.component';
 
 @NgModule({
   declarations: [
@@ -38,19 +41,23 @@ import { BadgeComponent } from './components/common/badge/badge.component';
     ShoppingCartTableComponent,
     ShowcaseComponent,
     OrderSummaryComponent,
-    InputComponent,
     CheckboxComponent,
     PrimaryButtonComponent,
     SecondaryButtonComponent,
     IconButtonComponent,
     TextButtonComponent,
     ProductTileComponent,
-    BadgeComponent
+    BadgeComponent,
+    SearchbarComponent,
+    FilterPipe,
+    MenuIconComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

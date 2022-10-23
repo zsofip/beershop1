@@ -21,4 +21,7 @@ export class HttpService {
     return this.http.get<Beer>(`${this.baseUrl}/${id}`);
   }
 
+  getBeersBefore(year: any): Observable<Beer[]> {
+  return this.http.get<Beer[]>(`${this.baseUrl}?brewed_before=01-${year}`);
+ }
 }

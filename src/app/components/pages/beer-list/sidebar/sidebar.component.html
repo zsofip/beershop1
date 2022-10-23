@@ -1,1 +1,16 @@
-<p>sidebar works!</p>
+<div class="row ms-4">
+  <div class="col">
+    <p class="copytext--standard--uppercase">
+      <span><img src="./../../../../../assets/icons/24/filter.svg" alt="filter"></span>
+      filter by</p>
+  </div>
+</div>
+<div class="row ms-4">
+  <div class="col">
+    <p>Brewed before...</p>
+    <div *ngFor="let year of years">
+      <app-checkbox [currentYear]="year"></app-checkbox>
+      <!-- <app-checkbox [(ngModel)]="selectYear" [currentYear]="year" (change)="onYearSelected(value)"></app-checkbox> -->
+    </div>
+  </div>
+</div>
