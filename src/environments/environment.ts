@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://api.punkapi.com/v2/beers'
 };
 
 /*

@@ -1,5 +1,4 @@
 import { Beer } from './../models/beer';
-import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class HttpService {
 
-  readonly baseUrl: string = environment.apiURL;
+  readonly baseUrl: string = 'https://api.punkapi.com/v2/beers';
 
   constructor(private http: HttpClient) { }
 
