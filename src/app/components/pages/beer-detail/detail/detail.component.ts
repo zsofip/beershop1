@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Beer } from 'src/app/models/beer';
 
 @Component({
   selector: 'app-detail',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+
+  @Input() currentBeer?: Beer;
 
   constructor() { }
 

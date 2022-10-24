@@ -24,8 +24,6 @@
 .sold-out {
   @extend .badge;
 
-  // box-sizing: border-box;
-
   width:max-content;
 
   /* Accent/Orange */
@@ -51,20 +49,6 @@
 }
 
 .badgeText {
-  /* Additional */
-
-  // width: 44px;
-  // height: 20px;
-
-  /* Caption/Caption small bold */
-
-
-  // font-family: "Lato";
-  // font-style: normal;
-  // font-weight: 700;
-  // font-size: 12px;
-  // line-height: 20px;
-  /* identical to box height, or 167% */
 
   display: flex;
   align-items: center;

@@ -1,4 +1,4 @@
-<div class="beer-detail-container">
+<div class="beer-detail-container container-fluid" *ngIf="currentBeer[0]">
   <div class="row">
     <div class="col-12">
       <div class="header-container">
@@ -9,7 +9,7 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item caption--standard"><a href="#">Home</a></li>
                 <li class="breadcrumb-item caption--standard" aria-current="page">All Beers</li>
-                <li class="breadcrumb-item active caption--bold" aria-current="page">{{ currentBeer$ |async }}</li>
+                <li class="breadcrumb-item active caption--bold" aria-current="page">{{ currentBeer[0].name }}</li>
               </ol>
             </nav>
           </div>
@@ -20,12 +20,12 @@
   <div class="row">
     <div class="col-9">
       <div class="detail-container">
-        <app-detail></app-detail>
+        <app-detail [currentBeer]="currentBeer[0]" ></app-detail>
       </div>
     </div>
     <div class="col-3">
       <div class="add-to-cart-container">
-        <app-add-to-cart></app-add-to-cart>
+        <app-add-to-cart [currentBeer]="currentBeer[0]"></app-add-to-cart>
       </div>
     </div>
   </div>

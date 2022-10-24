@@ -9,9 +9,11 @@ import { Beer } from '../models/beer';
 })
 export class BeerService {
 
-  years: number[] = [2008, 2012, 2016, 2020, 2023];
+  years: number[] = [2008, 2009, 2010, 2011, 2012];
 
   filterPhrase: BehaviorSubject<string> = new BehaviorSubject<string>("");
+
+  filterChecked: BehaviorSubject<string> = new BehaviorSubject<string>("");
 
   constructor(private httpService: HttpService, private randomService: RandomService) { }
 
@@ -23,5 +25,13 @@ export class BeerService {
 
     listenToPhrase() {
      return this.filterPhrase.asObservable();
+    }
+
+    emitCheckValue(value: string) {
+      this.filterChecked.next(value);
+    }
+
+    listenToCheckValue() {
+      return this.filterChecked.asObservable();
     }
 }

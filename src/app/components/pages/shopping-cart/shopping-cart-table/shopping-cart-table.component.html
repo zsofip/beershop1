@@ -1,1 +1,28 @@
-<p>shopping-cart-table works!</p>
+<div class="table-responsive mb-5">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th scope="col" class="copytext--bold">Product</th>
+        <th scope="col" class="copytext--bold">Contributor</th>
+        <th scope="col" class="copytext--bold">Price</th>
+        <th scope="col" class="copytext--bold">Quantity</th>
+        <th scope="col" class="copytext--bold">Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartContent">
+        <td id="productTd">
+          <img src="{{ item.beer.image_url}}" height="100px" alt="image of beer">
+          <span>{{ item.beer.name }}</span>
+          <span>Product No: {{ item.beer.id }}</span>
+        </td>
+        <td>{{ item.beer.contributed_by }}</td>
+        <td>{{ item.beer.ph | number: '1.2-2' }}</td>
+        <td><app-spinner [amount]="(item.amount).toString()"></app-spinner></td>
+        <td *ngIf="item.beer.ph">{{ (item.amount * item.beer.ph) | number: '1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div >
+</div>

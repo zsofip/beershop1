@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Beer } from './../../../models/beer';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -8,18 +9,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductTileComponent implements OnInit {
 
-  @Input() currentBeer?: any;
+  @Input() currentBeer?: Beer;
   @Input() productOfWeek: boolean = true;
-  // @Input() status: string;
+
   status: string = "sale";
   compare: string = "compare";
   heart: string = "heart";
   btnText: string = "Add to cart";
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+  }
+
+  toDetail(id: number){
+    this.router.navigate([`detail/${id}`]);
   }
 
 

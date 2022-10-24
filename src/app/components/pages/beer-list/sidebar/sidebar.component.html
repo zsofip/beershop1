@@ -7,10 +7,9 @@
 </div>
 <div class="row ms-4">
   <div class="col">
-    <p>Brewed before...</p>
+    <p>First brewed in...</p>
     <div *ngFor="let year of years">
       <app-checkbox [currentYear]="year"></app-checkbox>
-      <!-- <app-checkbox [(ngModel)]="selectYear" [currentYear]="year" (change)="onYearSelected(value)"></app-checkbox> -->
     </div>
   </div>
 </div>

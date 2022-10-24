@@ -1,0 +1,9 @@
+<div class="input-group mb-3">
+  <button class="btn plusminus-btn" type="button" id="plusminus-btn" (click)="onLowering(quantityField.value)">
+    <img src="./../../../../assets/icons/24/minus.svg" alt="minus">
+  </button>
+  <input #quantityField [(ngModel)]="amount" type="text" class="form-control shadow-none" required>
+  <button class="btn plusminus-btn" type="button" id="plusminus-btn" (click)="onRaising(quantityField.value)">
+    <img src="./../../../../assets/icons/24/plus.svg" alt="plus">
+  </button>
+</div>

@@ -16,9 +16,4 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onYearSelected(value: any) {
-    console.log("year", value);
-
-  }
-
 }

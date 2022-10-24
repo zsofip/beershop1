@@ -12,13 +12,12 @@
         </div>
       </div>
       <div class="image-frame" id="image-frame">
-        <!-- <div class="image" id="image" style="background-size: contain; background-image: url({{currentBeer?.image_url}}); background-repeat: no-repeat;"></div> -->
-        <div class="image" id="image" style="background-image: url({{currentBeer?.image_url}});"></div>
+        <div class="image" id="image" style="background-image: url({{currentBeer?.image_url}});" (click)="currentBeer ? toDetail(currentBeer.id) : ''"></div>
       </div>
     </div>
     <div class="tile-text" id="tile-text">
-      <p class="caption" id="add">{{ currentBeer?.name }}</p>
-      <h5 class="h5" id="desc">{{ currentBeer?.name }}</h5>
+      <p class="caption" id="add">{{ currentBeer?.contributed_by }}</p>
+      <h5 class="h5" id="desc" (click)="currentBeer ? toDetail(currentBeer.id) : ''">{{ currentBeer?.name }}</h5>
       <p class="caption" id="add">{{ currentBeer?.tagline }}</p>
     </div>
   </div>
@@ -26,8 +25,8 @@
     <div class="shopping-info" id="shopping-info">
       <div class="price-info" id="price-info">
         <div class="prices" id="prices">
-          <p class="h2" id="price">€{{ currentBeer?.ph }}
-            <span *ngIf="status === 'sale'" class="caption old-price" id="full-price">€{{ currentBeer?.ph }}</span>
+          <p class="h2" id="price">€{{ currentBeer?.ph | number: '1.2-2' }}
+            <span *ngIf="status === 'sale'" class="caption old-price" id="full-price">€{{ currentBeer?.ph | number: '1.2-2' }}</span>
           </p>
           <div *ngIf="status === 'sale'" class="off-price" id="off-price">
             <p class="caption-small" id="off-price-text">50% OFF</p>

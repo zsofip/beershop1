@@ -1,7 +1,10 @@
 <div class="form-check">
-  <input class="form-check-input shadow-none" type="checkbox" value="" id="check">
+  <input #checkboxField class="form-check-input shadow-none" type="checkbox" value="{{currentYear}}" id="check"
+  [checked]="isChecked"
+  (change)="onChecked(checkboxField.checked, checkboxField.value)">
   <label class="form-check-label" for="check">
     {{currentYear}}
   </label>
 </div>
+
 

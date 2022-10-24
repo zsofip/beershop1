@@ -12,6 +12,7 @@ import { BeerService } from 'src/app/services/beer.service';
 export class ListComponent implements OnInit, OnDestroy {
 
   public phrase: string = "";
+  public checkValue: string = "";
   public List$: Observable<Beer[]> = this.httpService.getAll();
   private subscriptions = new Subscription();
 
@@ -20,8 +21,10 @@ export class ListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.add(this.beerService.listenToPhrase().subscribe(phr => {
-      console.log('phrase', phr);
       this.phrase = phr;
+    }));
+    this.subscriptions.add(this.beerService.listenToCheckValue().subscribe(val => {
+      this.checkValue = val;
     }));
   }
 

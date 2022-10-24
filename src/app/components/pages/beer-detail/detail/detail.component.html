@@ -1,1 +1,51 @@
-<p>detail works!</p>
+<div class="row m-3">
+  <div class="col-6">
+    <img src="{{ currentBeer?.image_url}}" height="317px" alt="image of beer">
+  </div>
+  <div class="col-6">
+    <h1 class="h1">{{currentBeer?.name}}</h1>
+    <h2 class="h2">{{currentBeer?.tagline}}</h2>
+    <p class="desc">{{currentBeer?.description}}</p>
+    <h2 class="h2">€{{currentBeer?.ph | number: '1.2-2'}}</h2>
+    <p class="caption--standard">Plus <a routerLink="/shopping-cart">shipping costs</a></p>
+  </div>
+</div>
+
+<div class="row m-3">
+  <div class="col-10">
+    <h1 class="h1">Beer Facts</h1>
+    <table>
+      <tr>
+        <th>Malts:</th>
+        <td><span *ngFor="let malts of currentBeer?.ingredients?.malt">
+            {{malts.name}},
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th>Hops:</th>
+        <td><span *ngFor="let hops of currentBeer?.ingredients?.hops">
+          {{hops.name}},
+        </span></td>
+      </tr>
+      <tr>
+        <th>Yeast:</th>
+        <td>
+          {{currentBeer?.ingredients?.yeast}}
+        </td>
+      </tr>
+      <tr>
+        <th>ABV (% ALCOHOL):</th>
+        <td>
+          {{currentBeer?.abv}}
+        </td>
+      </tr>
+      <tr>
+        <th>Drinking Temperature (in °C):</th>
+        <td>
+          {{currentBeer?.method?.fermentation?.temp?.value}}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

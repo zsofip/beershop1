@@ -26,6 +26,7 @@ import { SearchbarComponent } from './components/pages/shared/header/searchbar/s
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuIconComponent } from './components/pages/shared/header/menu-icon/menu-icon.component';
+import { SpinnerComponent } from './components/common/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { MenuIconComponent } from './components/pages/shared/header/menu-icon/me
     BadgeComponent,
     SearchbarComponent,
     FilterPipe,
-    MenuIconComponent
+    MenuIconComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

@@ -17,8 +17,8 @@ export class HttpService {
     return this.http.get<Beer[]>(`${this.baseUrl}`);
   }
 
-  getOne(id: number): Observable<Beer> {
-    return this.http.get<Beer>(`${this.baseUrl}/${id}`);
+  getOne(id: number): Observable<Beer[]> {
+    return this.http.get<Beer[]>(`${this.baseUrl}/${id}`);
   }
 
   getBeersBefore(year: any): Observable<Beer[]> {

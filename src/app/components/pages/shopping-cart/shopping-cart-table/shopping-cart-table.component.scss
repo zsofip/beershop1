@@ -1,0 +1,17 @@
+@use './../../../../../styles/colors';
+@use './../../../../../styles/fonts';
+@use 'sass:map';
+
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  align-items: center;
+}
+
+#productTd {
+  display: flex;
+  flex-wrap: nowrap;
+}

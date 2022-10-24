@@ -14,11 +14,8 @@
   padding: 16px;
   gap: 16px;
 
-  // position: absolute;
   min-width: 302px;
   min-height: 467px;
-
-  // background: map.get(colors.$colors, "greyscale", "white");
 
   /* Greyscale/Light Grey */
   border: 1px solid map.get(colors.$colors, "greyscale", "white");
@@ -36,12 +33,6 @@
 
   width: 270px;
   height: 306px;
-
-  /* Inside auto layout */
-  // flex: none;
-  // order: 0;
-  // align-self: stretch;
-  // flex-grow: 0;
 }
 
 .tile-visual {
@@ -64,12 +55,6 @@
   align-items: flex-start;
   justify-content: space-around;
   gap: 6px;
-
-  /* Inside auto layout */
-  // flex: none;
-  // order: 0;
-  // align-self: stretch;
-  // flex-grow: 0;
 }
 
 .badges {

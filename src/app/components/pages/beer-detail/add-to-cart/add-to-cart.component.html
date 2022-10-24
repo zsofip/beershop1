@@ -1,1 +1,10 @@
-<p>add-to-cart works!</p>
+<div class="container-fluid">
+  <ng-container *ngIf="currentBeer">
+  <p class="copytext--standard">Delivery time appr. 3-7 workdays</p>
+  <h4 class="h4">TOTAL</h4>
+  <h2 class="h2">€{{multi(currentBeer.ph) | number: '1.2-2'}}</h2>
+  <p class="caption--standard">Prices incl. VAT plus <a routerLink="/shopping-cart">shipping costs</a></p>
+  <app-spinner></app-spinner>
+  <app-primary-button [btnText]="btnText" (click)="sendToCart(currentBeer)"></app-primary-button>
+</ng-container>
+</div>
