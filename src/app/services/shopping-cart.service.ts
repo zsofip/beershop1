@@ -1,6 +1,6 @@
 import { Beer } from './../models/beer';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +11,15 @@ export class ShoppingCartService {
 
   cartContent: BehaviorSubject<Array<Cart>> = new BehaviorSubject<Array<Cart>>([]);
 
+  sumTotal$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   constructor() { }
 
-  emitAmount(value: number) {
+  emitAmount(value: number): void {
     this.amountOfCart.next(value);
   }
 
-  listenToAmount() {
+  listenToAmount(): Observable<number> {
     return this.amountOfCart.asObservable();
   }
 
@@ -25,11 +27,11 @@ export class ShoppingCartService {
     this.cartContent.next(this.cartContent.value.concat(contentObj));
   }
 
-  listenToCart() {
+  listenToCart(): Observable<Cart[]> {
     return this.cartContent.asObservable();
   }
 
-  modify(cart: Cart, newAmount: number) {
+  modify(cart: Cart, newAmount: number): void {
     const cartUpdated = this.cartContent.getValue().map((item) => {
       if(item === cart && item.beer.ph !== null) {
         return {...item, amount: newAmount, total: (newAmount * item.beer.ph)};
@@ -37,6 +39,18 @@ export class ShoppingCartService {
       return item;
     });
     this.cartContent.next(cartUpdated);
+    this.getSumTotal();
+  }
+
+  getSumTotal(): Observable<number> {
+    const total = this.cartContent.getValue().map((item) => {
+      if(item.total) {
+        return item.total;
+      }
+      return 0;
+    }).reduce((a, b) => a + b, 0);
+    this.sumTotal$.next(total);
+    return this.sumTotal$.asObservable();
   }
 }
 

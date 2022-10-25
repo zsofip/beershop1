@@ -1,4 +1,6 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
 @Component({
   selector: 'app-order-summary',
@@ -8,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class OrderSummaryComponent implements OnInit {
 
   btnText: string = "Checkout";
+  public sumTotal$?: Observable<number>;
 
-  constructor() { }
+  constructor(private shoppingService: ShoppingCartService) { }
 
   ngOnInit(): void {
+    this.sumTotal$ = this.shoppingService.getSumTotal();
   }
 
 }
