@@ -1,10 +1,5 @@
 <div class="tile-container">
-  <div *ngFor="let beer of List$ | async | filter:phrase:'name'">
+  <div *ngFor="let beer of List$ | async | filter:phrase:'name' | filter:checkValue:'first_brewed'">
       <app-product-tile [currentBeer] = "beer"></app-product-tile>
 </div>
-  <!-- <div *ngIf="List$ | async as beers">
-  <div *ngFor="let beer of beers | filter:phrase:'name'">
-      <app-product-tile [currentBeer] = "beer"></app-product-tile>
-  </div>
-</div> -->
 </div>
