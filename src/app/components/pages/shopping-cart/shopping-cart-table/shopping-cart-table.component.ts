@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, filter, map, Observable, pipe, Subscription } from 'rxjs';
-import { Beer } from 'src/app/models/beer';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
 import { Cart, ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
@@ -18,7 +17,7 @@ export class ShoppingCartTableComponent implements OnInit, OnDestroy {
   constructor(public httpService: HttpService, private shoppingService: ShoppingCartService) { }
 
   ngOnInit(): void {
-    this.cartContent$ = this.shoppingService.cartContent;
+    this.cartContent$ = this.shoppingService.cartContent$;
   }
 
 

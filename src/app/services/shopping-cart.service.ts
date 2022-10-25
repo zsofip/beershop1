@@ -7,9 +7,9 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 })
 export class ShoppingCartService {
 
-  amountOfCart: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  amountOfCart$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  cartContent: BehaviorSubject<Array<Cart>> = new BehaviorSubject<Array<Cart>>([]);
+  cartContent$: BehaviorSubject<Array<Cart>> = new BehaviorSubject<Array<Cart>>([]);
 
   sumTotal$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
@@ -17,35 +17,41 @@ export class ShoppingCartService {
 
   constructor() { }
 
+  // for following the changes of spinners:
+
   emitAmount(value: number): void {
-    this.amountOfCart.next(value);
+    this.amountOfCart$.next(value);
   }
 
   listenToAmount(): Observable<number> {
-    return this.amountOfCart.asObservable();
+    return this.amountOfCart$.asObservable();
   }
 
+  // for creating cart items:
+
   emitToCart(contentObj: Cart) {
-    this.cartContent.next(this.cartContent.value.concat(contentObj));
+    this.cartContent$.next(this.cartContent$.value.concat(contentObj));
   }
 
   listenToCart(): Observable<Cart[]> {
-    return this.cartContent.asObservable();
+    return this.cartContent$.asObservable();
   }
 
+  // for updating cart:
+
   modify(cart: Cart, newAmount: number): void {
-    const cartUpdated = this.cartContent.getValue().map((item) => {
+    const cartUpdated = this.cartContent$.getValue().map((item) => {
       if(item === cart && item.beer.ph !== null) {
         return {...item, amount: newAmount, total: (newAmount * item.beer.ph)};
       }
       return item;
     });
-    this.cartContent.next(cartUpdated);
+    this.cartContent$.next(cartUpdated);
     this.getSumTotal();
   }
 
   getSumTotal(): Observable<number> {
-    const total = this.cartContent.getValue().map((item) => {
+    const total = this.cartContent$.getValue().map((item) => {
       if(item.total) {
         return item.total;
       }
@@ -55,6 +61,8 @@ export class ShoppingCartService {
     this.getOrderData();
     return this.sumTotal$.asObservable();
   }
+
+  // for order summary:
 
   getOrderData() {
     const value = this.sumTotal$.getValue();
