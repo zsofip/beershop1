@@ -36,9 +36,8 @@ export class AddToCartComponent implements OnInit, OnDestroy {
   }
 
   sendToCart(currentBeer: Beer) {
-    this.shoppingService.emitToCart({beer: currentBeer, amount: this.currentAmount});
-    console.log('cart amount', this.currentAmount);
-    console.log('cart id', currentBeer.id);
+    if(currentBeer.ph !== null)
+    this.shoppingService.emitToCart({beer: currentBeer, amount: this.currentAmount, total: (currentBeer.ph * this.currentAmount)});
   }
 
   ngOnDestroy() {

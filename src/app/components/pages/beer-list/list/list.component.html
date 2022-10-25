@@ -1,4 +1,4 @@
-<div class="tile-container">
+<div class="tile-container row row-cols-sm-1 row-cols-2 row-cols-md-3 row-cols-lg-4">
   <div *ngFor="let beer of List$ | async | filter:phrase:'name' | filter:checkValue:'first_brewed'">
       <app-product-tile [currentBeer] = "beer"></app-product-tile>
 </div>

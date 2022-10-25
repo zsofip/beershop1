@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of cartContent">
+      <tr *ngFor="let item of cartContent$ | async">
         <td id="productTd">
           <img src="{{ item.beer.image_url}}" height="100px" alt="image of beer">
           <span>{{ item.beer.name }}</span>
@@ -18,8 +18,18 @@
         </td>
         <td>{{ item.beer.contributed_by }}</td>
         <td>{{ item.beer.ph | number: '1.2-2' }}</td>
-        <td><app-spinner [amount]="(item.amount).toString()"></app-spinner></td>
-        <td *ngIf="item.beer.ph">{{ (item.amount * item.beer.ph) | number: '1.2-2' }}</td>
+        <td>
+          <div class="input-group mb-3">
+            <button class="btn plusminus-btn" type="button" id="plusminus-btn" (click)="onLowering(item, quantityField.value)">
+              <img src="./assets/icons/24/minus.svg" alt="minus">
+            </button>
+            <input #quantityField [(ngModel)]="item.amount" type="text" class="form-control shadow-none" required>
+            <button class="btn plusminus-btn" type="button" id="plusminus-btn" (click)="onRaising(item, quantityField.value)">
+              <img src="./assets/icons/24/plus.svg" alt="plus">
+            </button>
+          </div>
+        </td>
+        <td>{{ item.total | number: '1.2-2' }}</td>
       </tr>
     </tbody>
   </table>

@@ -28,9 +28,20 @@ export class ShoppingCartService {
   listenToCart() {
     return this.cartContent.asObservable();
   }
+
+  modify(cart: Cart, newAmount: number) {
+    const cartUpdated = this.cartContent.getValue().map((item) => {
+      if(item === cart && item.beer.ph !== null) {
+        return {...item, amount: newAmount, total: (newAmount * item.beer.ph)};
+      }
+      return item;
+    });
+    this.cartContent.next(cartUpdated);
+  }
 }
 
 export interface Cart {
   beer: Beer;
   amount: number;
+  total?: number;
 }

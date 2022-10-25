@@ -15,3 +15,11 @@ td {
   display: flex;
   flex-wrap: nowrap;
 }
+
+.input-group {
+  max-width: 250px;
+}
+
+input {
+  text-align: center;
+}
