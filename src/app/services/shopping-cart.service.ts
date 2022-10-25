@@ -1,6 +1,6 @@
 import { Beer } from './../models/beer';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,8 @@ export class ShoppingCartService {
   cartContent: BehaviorSubject<Array<Cart>> = new BehaviorSubject<Array<Cart>>([]);
 
   sumTotal$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
+  orderData$: BehaviorSubject<Array<OrderData>> = new BehaviorSubject<Array<OrderData>>([]);
 
   constructor() { }
 
@@ -50,7 +52,17 @@ export class ShoppingCartService {
       return 0;
     }).reduce((a, b) => a + b, 0);
     this.sumTotal$.next(total);
+    this.getOrderData();
     return this.sumTotal$.asObservable();
+  }
+
+  getOrderData() {
+    const value = this.sumTotal$.getValue();
+    const VAT = value / 10;
+    const shipping =  value >= 500 ? 0 : value / 5;
+    const orderTotal = value + VAT + shipping;
+    const orderData = [{vat: VAT, ship: shipping, order: orderTotal}];
+    this.orderData$.next(orderData);
   }
 }
 
@@ -58,4 +70,10 @@ export interface Cart {
   beer: Beer;
   amount: number;
   total?: number;
+}
+
+export interface OrderData {
+  vat: number;
+  ship: number;
+  order: number;
 }

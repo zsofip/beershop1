@@ -1,13 +1,13 @@
 <div class="container-fluid mx-2">
-  <!-- <ng-container *ngIf="currentBeer"> -->
     <h4 class="h4">SUMMARY</h4>
     <p class="copytext--standard">Free shipping from €500</p>
     <hr>
     <p class="copytext--standard">Items: €{{ sumTotal$ | async | number: '1.2-2' }}</p>
-    <p class="copytext--standard">VAT: €1</p>
-    <p class="copytext--standard">Shipping & handling: €2</p>
-    <hr>
-    <h4 class="h4">ORDER TOTAL</h4>
+    <ng-container *ngFor="let data of orderData$ | async">
+      <p class="copytext--standard">VAT: €{{ data.vat | number: '1.2-2' }}</p>
+      <p class="copytext--standard">Shipping & handling: €{{ data.ship | number: '1.2-2' }}</p>
+      <hr>
+      <h4 class="h4">ORDER TOTAL €{{ data.order | number: '1.2-2' }}</h4>
+    </ng-container>
   <app-primary-button [btnText]="btnText"></app-primary-button>
-<!-- </ng-container> -->
 </div>
